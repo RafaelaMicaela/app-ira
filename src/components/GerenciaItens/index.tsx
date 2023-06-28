@@ -8,6 +8,7 @@ const GerenciaIntes = () => {
       <NavBar>
         <H1>Intes</H1>
       </NavBar>
+
       <MenuList>
         <MenuItem>
           <MenuLink>Home</MenuLink>
@@ -22,6 +23,7 @@ const GerenciaIntes = () => {
           <MenuLink>Clentes</MenuLink>
         </MenuItem>
       </MenuList>
+
       <ListItens />
     </>
   );
