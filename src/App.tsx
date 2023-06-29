@@ -1,4 +1,4 @@
-import GerenciaIntes from "./components/GerenciaIntes";
+import GerenciaIntes from "./components/GerenciaItens";
 
 function App() {
   return (
