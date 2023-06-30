@@ -28,7 +28,7 @@ export const Card = styled.div`
   justify-content: center;
   border-radius: 8px 8px 0px 0px;
   background: var(--shapes-inputs, #f8f8fc);
-  height: 41px;
+  height: 51px;
   width: 535px;
   flex-shrink: 0;
   margin: 0 0 2px 16px;
