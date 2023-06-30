@@ -23,6 +23,7 @@ export const P = styled.p`
 `;
 
 export const Card = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px 8px 0px 0px;
@@ -37,7 +38,7 @@ export const CardIten = styled.div`
   align-items: center;
   border-radius: 8px 8px 0px 0px;
   background: var(--shapes-inputs, #f8f8fc);
-  height: 41px;
+  height: 51px;
   width: 535px;
   flex-shrink: 0;
   border: 1px solid var(--back-lines-in-white, #e6e6f0);
@@ -64,4 +65,6 @@ export const Icon = styled.img`
   width: 19px;
   height: 19px;
   color: #c9c9d4;
+  position: absolute;
+  right: 723px;
 `;

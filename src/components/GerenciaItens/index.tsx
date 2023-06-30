@@ -24,7 +24,7 @@ const GerenciaIntes = () => {
         </MenuItem>
       </MenuList>
 
-      <ListItens />
+      <ListItens/>
     </>
   );
 };
