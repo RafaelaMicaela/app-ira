@@ -34,7 +34,7 @@ export const Card = styled.div`
   margin: 0 0 2px 16px;
 `;
 
-export const CardIten = styled.div`
+export const CardTema = styled.div`
   align-items: center;
   border-radius: 8px 8px 0px 0px;
   background: var(--shapes-inputs, #f8f8fc);
@@ -47,7 +47,7 @@ export const CardIten = styled.div`
   display: flex;
 `;
 
-export const TitleIten = styled.p`
+export const Title = styled.p`
   color: var(--texts-inputs, #6a6180);
   font-size: 22px;
   text-align: center;
@@ -61,10 +61,4 @@ export const TitleIten = styled.p`
   padding: 0;
 `;
 
-export const Icon = styled.img`
-  width: 19px;
-  height: 19px;
-  color: #c9c9d4;
-  position: absolute;
-  right: 645px;
-`;
+

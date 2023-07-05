@@ -1,40 +1,32 @@
 import styled from "styled-components";
 
-export const NavBar = styled.div`
+export const Button = styled.button`
   display: flex;
-  height: 109px;
-  width: 100%;
-  background: #04d361;
-  padding: 0 20px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
-export const H1 = styled.h1`
-  display: flex;
-  color: var(--texts-in-purple-ttulo, #FFF);
-  font-size: 50px;
+  border: none;
+  width: 54px;
+  height: 54px;
+  background-color: #04d361;
+  color: #fff;
+  font-size: 24px;
   font-family: Archivo;
-  font-weight: 700;
-  line-height: 42px;
-  margin: 0;
-  padding: 0;
+  border-radius: 50%;
   align-items: center;
+  justify-content: center;
 `;
 
 export const MenuList = styled.ul`
-  width: 175px;
+  width: 224px;
   height: 56px;
   border-radius: 8px 8px 0px 0px;
   list-style: none;
   margin: 0;
   padding: 0;
   justify-content: center;
-  
 `;
 
 export const MenuItem = styled.li`
   border-radius: 8px 8px 0px 0px;
-  background:  #F8F8FC;
+  background: #f8f8fc;
   height: 100%;
   width: 100%;
   display: flex;
