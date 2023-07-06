@@ -1,31 +1,16 @@
-import ListItens from "./components/ListItens";
-import ListTemas from "./components/ListTemas";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import ListItens from "./pages/ListItens";
+import ListTemas from "./pages/ListTemas";
 
-import { Home } from "./pages";
-import { Routes } from "./routes";
-
-export const path = [
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/listTemas",
-    element: <ListTemas />,
-  },
-  {
-    path: "/listItens",
-    element: <ListItens />,
-  },
-  
-];
-
-function App() {
+const App = () => {
   return (
-    <>
-      <Routes />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/listitens" element={<ListItens />} />
+      <Route path="/listtemas" element={<ListTemas />} />
+    </Routes>
   );
-}
+};
 
 export default App;

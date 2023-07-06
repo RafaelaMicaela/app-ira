@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       <Nav>
-        <H1>Itens</H1>
+        <H1>Home</H1>
       </Nav>
     </>
   );

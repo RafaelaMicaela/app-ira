@@ -1,4 +1,5 @@
 import { MenuItem, MenuLink, MenuList, Button } from "./styles";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const GerenciaMenu = () => {
@@ -7,13 +8,17 @@ const GerenciaMenu = () => {
       <Button>+</Button>
       <MenuList>
         <MenuItem>
-          <MenuLink href="./../../pages/Home">Home</MenuLink>
+          <MenuLink>Home</MenuLink>
         </MenuItem>
         <MenuItem>
-          <MenuLink href="./../ListItens">Itens</MenuLink>
+          <Link to="/ListItens">
+            <MenuLink>Itens</MenuLink>
+          </Link>
         </MenuItem>
         <MenuItem>
-          <MenuLink href="./../ListTemas">Temas</MenuLink>
+          <Link to="/ListTemas">
+            <MenuLink>Temas</MenuLink>
+          </Link>
         </MenuItem>
         <MenuItem>
           <MenuLink>Alugeis</MenuLink>
