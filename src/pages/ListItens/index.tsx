@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, CardIten, Container, Icon, P, TitleIten } from "./styles";
 import IconImg from "../../assets/IconImg.png";
+import Button from "../../components/Button";
 
 const ListItens = () => {
   const [data, setData] = useState<any>([]);
@@ -22,6 +23,7 @@ const ListItens = () => {
   return (
     <>
       <Container>
+        <Button />
         <Card>
           <P>Lista de Itens</P>
         </Card>

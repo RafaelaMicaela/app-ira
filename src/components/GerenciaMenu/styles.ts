@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
-  display: flex;
-  border: none;
-  width: 54px;
-  height: 54px;
-  background-color: #04d361;
-  color: #fff;
-  font-size: 24px;
-  font-family: Archivo;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const MenuList = styled.ul`
   width: 224px;
   height: 56px;
@@ -51,5 +37,3 @@ export const MenuLink = styled.a`
     color: #380f88;
   }
 `;
-
-

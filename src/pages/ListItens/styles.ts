@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 20px;
 `;
 
 export const P = styled.p`
@@ -26,12 +27,13 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px;
   background: var(--shapes-inputs, #f8f8fc);
   height: 60px;
   width: 645px;
   flex-shrink: 0;
   margin: 0 0 2px 16px;
+  padding: 0 16px;
 `;
 
 export const CardIten = styled.div`
