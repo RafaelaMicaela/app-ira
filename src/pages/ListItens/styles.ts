@@ -8,6 +8,10 @@ export const Container = styled.div`
   margin: 20px;
 `;
 
+export const ContainerButton = styled.div`
+  display: flex;
+`;
+
 export const P = styled.p`
   color: var(--texts-inputs, #c1bccc);
   font-size: 22px;

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardTema, Container, P, Title } from "./styles";
+import { Card, CardTema, Container, ContainerButton, P, Title } from "./styles";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 
 const ListTemas = () => {
   const [data, setData] = useState<any>([]);
@@ -21,6 +23,11 @@ const ListTemas = () => {
   return (
     <>
       <Container>
+        <ContainerButton>
+          <Link to="/CriarTemas">
+            <Button />
+          </Link>
+        </ContainerButton>
         <Card>
           <P>Lista de Temas</P>
         </Card>

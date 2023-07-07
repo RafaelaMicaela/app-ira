@@ -7,6 +7,10 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const ContainerButton = styled.div`
+  display: flex;
+`;
+
 export const P = styled.p`
   color: var(--texts-inputs, #c1bccc);
   font-size: 22px;

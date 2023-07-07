@@ -11,8 +11,8 @@ export const Container = styled.div`
 `;
 
 export const CardForm = styled(Card)`
-  width: 600px;
-  height: 432px;
+  width: 700px;
+  height: 800px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -121,3 +121,33 @@ export const ContainerButton = styled.div`
 export const ContainerLabel = styled.div`
     width: 100%;
 `;
+
+export const ContainerItens = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    flex-direction: row;
+`;
+
+export const ListItem = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  `;
+
+export const SelectItens = styled.select`
+  width: 100%;
+  height: 62px;
+  margin-bottom: 15px;
+  border: 1px solid #e6e6f0;
+  background-color: #fafafc;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 0 20px;
+  `;
+

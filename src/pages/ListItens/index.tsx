@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { Card, CardIten, Container, Icon, P, TitleIten } from "./styles";
+import {
+  Card,
+  CardIten,
+  Container,
+  ContainerButton,
+  Icon,
+  P,
+  TitleIten,
+} from "./styles";
 import IconImg from "../../assets/IconImg.png";
 import Button from "../../components/Button";
 
@@ -23,7 +32,12 @@ const ListItens = () => {
   return (
     <>
       <Container>
-        <Button />
+        <ContainerButton>
+          <Link to="/CriarItens">
+            <Button />
+          </Link>
+        </ContainerButton>
+
         <Card>
           <P>Lista de Itens</P>
         </Card>
