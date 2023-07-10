@@ -13,88 +13,140 @@ import {
   Title,
 } from "./styles";
 
-import { useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
+
+interface Theme {
+  name: string;
+  color: string;
+  price: string;
+}
+
+interface Item {
+  id: number;
+  name: string;
+}
 
 const CriarTemas = () => {
   const [name, setName] = useState("");
-  const [cor, setCor] = useState("");
-  const [preco, setPreco] = useState("");
-  const [itens, setItens] = useState("");
+  const [color, setColor] = useState("");
+  const [price, setPrice] = useState("");
+  const [items, setItems] = useState<Item[]>([]);
+  const [selectedItemId, setSelectedItemId] = useState<number | undefined> (undefined);
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
-  const handleCorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCor(event.target.value);
+  const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setColor(event.target.value);
   };
-  const handlePrecoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPreco(event.target.value);
-  };
-  const handleItensChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setItens(event.target.value);
+  const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPrice(event.target.value);
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSelectItensChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedItemId(parseInt(event.target.value));
+  };
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await axios.get(
+          "http://3.128.249.166:8000/api/itens/"
+        );
+        setItems(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchItems();
+  }, []);
+
+  const handleCreateTheme = async (event: React.FormEvent) => {
     event.preventDefault();
-
     try {
-      await axios.post("http://3.128.249.166:8000/api/themes/", {
+      const theme: Theme = {
         name,
-        cor,
-        preco,
-        itens,
-      });
-      alert("Item criado com sucesso!");
-      setName("");
-      setCor("");
-      setPreco("");
-      setItens("");
+        color,
+        price: parseFloat(price),
+      };
+      await axios.post("http://3.128.249.166:8000/api/themes", theme);
+      console.log("Tema criado com sucesso!");
     } catch (error) {
       console.log(error);
-      alert("Erro ao criar item!");
     }
   };
 
   const handleCancel = () => {
     setName("");
-    setCor("");
-    setPreco("");
-    setItens("");
+    setColor("");
+    setPrice("");
+    setItems([]);
   };
 
   return (
     <Container>
       <Title>Criar Temas</Title>
-      <CardForm onSubmit={handleSubmit}>
+      <CardForm>
         <ContainerLabel>
           <Label>
             Nome:
-            <Input type="text" name="name" value={name} onChange={handleNameChange} />
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleNameChange}
+            />
           </Label>
           <Label>
             Cor:
-            <Input type="text" name="color" value={cor} onChange={handleCorChange} />
+            <Input
+              id="color"
+              type="text"
+              name="color"
+              value={color}
+              onChange={handleColorChange}
+            />
           </Label>
           <Label>
             Preço:
-            <Input type="text" name="price" value={preco} onChange={handlePrecoChange} />
+            <Input
+              id="price"
+              type="text"
+              name="price"
+              value={price}
+              onChange={handlePriceChange}
+            />
           </Label>
         </ContainerLabel>
 
         <ContainerItens>
           <ListItem>
             <Label>Itens:</Label>
-            <SelectItens>
-              <option value="1">Pula-Pula</option>
-              <option value="2">Painel</option>
+            <SelectItens
+              id="items"
+              name="items"
+              value={selectedItemId}
+              onChange={handleSelectItensChange}
+            >
+              <option value="">Selecione o item</option>
+              {items.map((item: Item) => (
+                <option key={item.id} value={item.id}>
+                  {item.name}
+                </option>
+              ))}
             </SelectItens>
           </ListItem>
         </ContainerItens>
 
         <ContainerButton>
-          <Button1 type="button" onClick={handleCancel}>Cancelar</Button1>
-          <Button2 type="submit" onClick={handleSubmit}>Salvar</Button2>
+          <Button1 type="button" onClick={handleCancel}>
+            Cancelar
+          </Button1>
+          <Button2 type="submit" onClick={handleCreateTheme}>
+            Salvar
+          </Button2>
         </ContainerButton>
       </CardForm>
     </Container>
