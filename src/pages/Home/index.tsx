@@ -1,7 +1,7 @@
 import GerenciaMenu from "../../components/GerenciaMenu";
 import NavBar from "../../layout/NavBar";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <NavBar />
@@ -9,3 +9,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;
