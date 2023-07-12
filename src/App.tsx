@@ -5,6 +5,7 @@ import ListTemas from "./pages/ListTemas";
 import CriarItens from "./pages/CriarItens";
 import CriarTemas from "./pages/CriarTemas";
 import ListClientes from "./pages/ListClientes";
+import CriarClientes from "./pages/CriarClientes";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/criaritens" element={<CriarItens />} />
       <Route path="/criartemas" element={<CriarTemas />} />
       <Route path="/ListClientes" element={<ListClientes />} />
+      <Route path="/CriarClientes" element={<CriarClientes/>}/>
     </Routes>
   );
 };

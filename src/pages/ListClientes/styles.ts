@@ -6,11 +6,16 @@ export const Container = styled.div`
   padding: 20px;
 `;
 
+export const ContainerButton = styled.div`
+  display: flex;
+`;
+
 export const ContainerCard = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap ;
   align-items: center;
   justify-content: center;
+  
   `;
 
 
