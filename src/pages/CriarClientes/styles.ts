@@ -1,4 +1,4 @@
-import { Card } from "./../ListTemas/styles";
+import { Link as LinkRouter } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -10,10 +10,10 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const CardForm = styled(Card)`
+export const CardForm = styled.form`
   width: 700px;
-  height: 800px;
-  padding: 20px;
+  height: 600px;
+  padding: 40px;
   background-color: #fff;
   border-radius: 8px;
   display: flex;
@@ -48,7 +48,7 @@ export const Input = styled.input`
   padding: 0 20px;
 `;
 export const Button1 = styled.button`
-  width: 100%;
+  width: 232px;
   height: 46px;
   background-color: #8257e5;
   border: 0;
@@ -57,14 +57,13 @@ export const Button1 = styled.button`
   color: #fff;
   cursor: pointer;
   align-items: center;
-  margin: 0 20px;
 
   &:hover {
     background-color: #e2d6ff;
   }
 `;
 export const Button2 = styled.button`
-  width: 100%;
+  width: 232px;
   height: 46px;
   background-color: #04d361;
   border: 0;
@@ -73,7 +72,7 @@ export const Button2 = styled.button`
   color: #fff;
   align-items: center;
   cursor: pointer;
-  margin: 0 20px;
+
   &:hover {
     background-color: #078661;
   }
@@ -87,11 +86,6 @@ export const Link = styled.a`
     color: #00b894;
   }
 `;
-export const Error = styled.span`
-  color: #e74c3c;
-  font-size: 13px;
-  margin-bottom: 15px;
-`;
 
 export const Label = styled.label`
   font-size: 16px;
@@ -102,7 +96,6 @@ export const Label = styled.label`
   color: #6a6180;
   text-align: left;
   width: 100%;
-  padding: 20px;
   display: flex;
   flex-direction: column;
 `;
@@ -114,10 +107,30 @@ export const ContainerButton = styled.div`
   justify-content: space-between;
   margin-top: 15px;
   margin-bottom: 15px;
-  padding: 0 20px;
   flex-direction: row;
 `;
 
 export const ContainerLabel = styled.div`
-    width: 100%;
+  width: 100%;
+`;
+
+export const BackButton = styled(LinkRouter)`
+  width: 232px;
+  height: 46px;
+  background-color: #8257e5;
+  border: 0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  &:hover {
+    background-color: #e2d6ff;
+  }
 `;

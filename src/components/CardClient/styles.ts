@@ -43,9 +43,11 @@ export const IconExcluir = styled.img`
   width: 32px;
   height: 30px;
   flex-shrink: 0;
+  cursor: pointer;
 `;
 export const IconEditar = styled.img`
   width: 32px;
   height: 30px;
   flex-shrink: 0;
+  cursor: pointer;
 `;

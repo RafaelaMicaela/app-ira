@@ -9,6 +9,7 @@ import IconDeleteClient from "../../assets/Trash.png";
 import IconEditClient from "../../assets/Pencil.png";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface Client {
   id: number;
@@ -21,7 +22,6 @@ interface EditClient {
   id: number;
   name?: string;
   email?: string;
-
 }
 
 const CardClient = () => {
@@ -37,7 +37,7 @@ const CardClient = () => {
       console.log("Error fetching data:", error);
     }
   };
-  
+
   useEffect(() => {
     fetchClients();
   }, []);
@@ -45,22 +45,24 @@ const CardClient = () => {
   const editClient = async ({ email, name, id }: EditClient) => {
     try {
       await axios.put(`http://3.128.249.166:8000/api/clients/${id}/`, {
-        email, name
+        email,
+        name,
       });
       fetchClients();
     } catch (error) {
-      console.error('error ao editar: ', error)
+      console.error("error ao editar: ", error);
     }
   };
 
   const deleteClient = async (clientId: number) => {
-    try{
+    try {
       await axios.delete(`http://3.128.249.166:8000/api/clients/${clientId}/`);
       fetchClients();
-    } catch (error){
-      console.error('erro ao deletar cliente', error)
+      alert("Cliente deletado com sucesso");
+    } catch (error) {
+      console.error("erro ao deletar cliente", error);
     }
-  }
+  };
 
   return (
     <>
@@ -68,12 +70,22 @@ const CardClient = () => {
         <Card>
           <NameClient>{client.name}</NameClient>
           <ContainerIcons>
-            <IconEditar onClick={() => editClient({
-              id: client.id,
-              email: client.email,
-              name: client.name
-            })} src={IconEditClient} />
-            <IconExcluir onClick={() => deleteClient(client.id)} src={IconDeleteClient} />
+            <Link to={`/EditClient/${client.id}`}>
+              <IconEditar
+                onClick={() =>
+                  editClient({
+                    id: client.id,
+                    email: client.email,
+                    name: client.name,
+                  })
+                }
+                src={IconEditClient}
+              />
+            </Link>
+            <IconExcluir
+              onClick={() => deleteClient(client.id)}
+              src={IconDeleteClient}
+            />
           </ContainerIcons>
         </Card>
       ))}
