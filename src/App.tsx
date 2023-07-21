@@ -10,6 +10,7 @@ import CriarTemas from "./pages/CriarTemas";
 import ListClientes from "./pages/ListClientes";
 import CriarClientes from "./pages/CriarClientes";
 import EditClient from "./pages/EditClient";
+import ListAluguel from "./pages/ListAluguel";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/ListClientes" element={<ListClientes />} />
         <Route path="/CriarClientes" element={<CriarClientes />} />
         <Route path="/EditClient/:id_client" element={<EditClient />} />
+        <Route path="/ListAluguel" element={<ListAluguel />} />
       </Routes>
     </Suspense>
   );

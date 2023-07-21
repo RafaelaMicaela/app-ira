@@ -19,7 +19,9 @@ const GerenciaMenu = () => {
         </Link>
       </MenuItem>
       <MenuItem>
-        <MenuLink>Alugeis</MenuLink>
+        <Link to="/ListAluguel">
+          <MenuLink>Alugeis</MenuLink>
+        </Link>
       </MenuItem>
       <MenuItem>
         <Link to="/ListClientes">
