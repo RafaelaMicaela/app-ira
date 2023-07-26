@@ -11,6 +11,7 @@ import ListClientes from "./pages/ListClientes";
 import CriarClientes from "./pages/CriarClientes";
 import EditClient from "./pages/EditClient";
 import ListAluguel from "./pages/ListAluguel";
+import CriarAluguel from "./pages/CriarAluguel";
 
 const Home = lazy(() => import("./pages/Home"));
 
@@ -27,6 +28,8 @@ const App = () => {
         <Route path="/CriarClientes" element={<CriarClientes />} />
         <Route path="/EditClient/:id_client" element={<EditClient />} />
         <Route path="/ListAluguel" element={<ListAluguel />} />
+        <Route path="/CriarAluguel" element={<CriarAluguel />} />
+        <Route path="/EditAluguel/:id_aluguel" element={<CriarAluguel />} />
       </Routes>
     </Suspense>
   );
