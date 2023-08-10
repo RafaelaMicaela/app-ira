@@ -14,6 +14,8 @@ import {
   ContentTema,
   NomeTema,
   ContainerButton,
+  ContentTemaLink,
+  ContentNomeData,
 } from "./styles";
 
 import IconDeleteAluguel from "../../assets/Trash.png";
@@ -32,8 +34,6 @@ interface Aluguel {
 }
 
 interface ListAluguel {
-  number: number | undefined;
-  street: string | undefined;
   complement: string | undefined;
   district: string | undefined;
   city: string | undefined;
@@ -151,35 +151,39 @@ const ListAluguel = () => {
         <ContainerCard>
           {listAluguel.map((aluguel) => (
             <Card>
-              <ContentTema>
-                <NomeTema>{aluguel.theme}</NomeTema>
-              </ContentTema>
+              <ContentTemaLink>
+                <ContentTema>
+                  <NomeTema>{aluguel.theme}</NomeTema>
+                </ContentTema>
 
-              <ContainerIcon>
-                <IconExcluir
-                  onClick={() => deleteAluguel(aluguel.id)}
-                  src={IconDeleteAluguel}
-                />
-                <Link to={`/EditAluguel/${aluguel.id}`}>
-                  <IconEditar
-                    onClick={() =>
-                      editAluguel({
-                        street: aluguel.street,
-                        number: aluguel.number,
-                        complement: aluguel.complement,
-                        district: aluguel.district,
-                        city: aluguel.city,
-                        state: aluguel.state,
-                        id: aluguel.id,
-                      })
-                    }
-                    src={IconEditAluguel}
+                <ContainerIcon>
+                  <IconExcluir
+                    onClick={() => deleteAluguel(aluguel.id)}
+                    src={IconDeleteAluguel}
                   />
-                </Link>
-              </ContainerIcon>
+                  <Link to={`/EditAluguel/${aluguel.id}`}>
+                    <IconEditar
+                      onClick={() =>
+                        editAluguel({
+                          street: aluguel.street,
+                          number: aluguel.number,
+                          complement: aluguel.complement,
+                          district: aluguel.district,
+                          city: aluguel.city,
+                          state: aluguel.state,
+                          id: aluguel.id,
+                        })
+                      }
+                      src={IconEditAluguel}
+                    />
+                  </Link>
+                </ContainerIcon>
+              </ContentTemaLink>
 
-              <CardNome>{aluguel.client}</CardNome>
-              <CardData>{aluguel.date}</CardData>
+              <ContentNomeData>
+                <CardNome>{aluguel.client}</CardNome>
+                <CardData>Data: {aluguel.date}</CardData>
+              </ContentNomeData>
               <ContainerCardHora>
                 <CardHora>Inicio: {aluguel.start_hours} </CardHora>
                 <CardHora>Fim: {aluguel.end_hours}</CardHora>

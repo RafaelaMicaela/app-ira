@@ -11,6 +11,9 @@ export const Container = styled.div`
 
 export const ContainerButton = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 `;
 
 export const Card = styled.div`
@@ -24,6 +27,7 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 20px;
 `;
 
 export const ContentTema = styled.div`
@@ -31,7 +35,7 @@ export const ContentTema = styled.div`
   height: 32px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: var(--color-green, #04d361);
+  background: #04d361;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,17 +71,20 @@ export const CardNome = styled.h3`
   font-size: 20px;
   font-weight: bold;
   color: #000;
-  text-align: center;
 `;
 
 export const CardData = styled.h3`
   font-size: 16px;
   font-family: "popins", sans-serif;
   color: #6a6180;
-  text-align: center;
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
+`;
+
+export const ContentNomeData = styled.div`
+  text-align: left;
+  width: 100%;
 `;
 
 export const ContainerCardHora = styled.div`
@@ -91,7 +98,7 @@ export const ContainerCardHora = styled.div`
 export const CardHora = styled.h3`
   font-size: 16px;
   color: #9c98a6;
-  text-align: center;
+  text-align: left;
   font-style: normal;
 `;
 
@@ -99,6 +106,15 @@ export const ContainerCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  flex-direction: row;
   align-items: center;
   margin-top: 20px;
+  padding: 0 20px 0 20px;
+`;
+
+export const ContentTemaLink = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
